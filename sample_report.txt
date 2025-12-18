@@ -1,0 +1,123 @@
+==============================
+ Linux Triage Report
+ Host: HOST
+ Time: Wed Dec 17 06:34:33 PM PST 2025
+ Report: /home/HOST/arsenal/reports/triage_HOST_2025-12-17_183433.txt
+==============================
+
+[SYSTEM]
+- Kernel / OS info
+Linux HOST 6.16.8+kali-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.16.8-1kali1 (2025-09-24) x86_64 GNU/Linux
+- Uptime + load
+ 18:34:33 up 3 days,  6:57,  1 user,  load average: 0.43, 0.54, 0.55
+
+[CPU/RAM]
+- Memory usage
+               total        used        free      shared  buff/cache   available
+Mem:            13Gi       4.4Gi       3.8Gi       101Mi       5.8Gi       9.1Gi
+Swap:          7.5Gi          0B       7.5Gi
+
+[DISK]
+- Disk usage (human + filesystem type)
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  6.7G     0  6.7G   0% /dev
+tmpfs          tmpfs     1.4G  1.7M  1.4G   1% /run
+/dev/nvme0n1p7 ext4      208G  175G   23G  89% /
+tmpfs          tmpfs     6.8G  8.0K  6.8G   1% /dev/shm
+efivarfs       efivarfs  178K  109K   64K  63% /sys/firmware/efi/efivars
+tmpfs          tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs          tmpfs     6.8G  2.1M  6.8G   1% /tmp
+/dev/nvme0n1p1 vfat      256M   35M  222M  14% /boot/efi
+tmpfs          tmpfs     1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs          tmpfs     1.4G  4.1M  1.4G   1% /run/user/1000
+
+[DISK - TOP DIRS under / (may take a moment)]
+- Top directories under /
+175G	/
+136G	/home
+34G	/usr
+4.9G	/var
+565M	/opt
+362M	/boot
+16M	/etc
+4.5M	/root
+16K	/lost+found
+8.0K	/srv
+8.0K	/media
+4.0K	/snap
+4.0K	/mnt
+4.0K	/.cache
+
+[NETWORK - INTERFACES]
+- Interfaces (brief)
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+wlan0            UP             192.168.x.x/24 fe80::7a93:c3ff:feda:d928/64 
+docker0          DOWN           172.17.0.1/16 
+
+[NETWORK - ROUTES]
+- Routing table
+default via 192.168.x.xx.x dev wlan0 proto dhcp src 192.168.x.x metric 600 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+192.168.x.x/24 dev wlan0 proto kernel scope link src 192.168.x.x metric 600 
+
+[DNS]
+- DNS server: 192.168.x.x
+- DNS resolution test (google.com)
+142.250.176.14
+
+[GATEWAY]
+- Gateway: 192.168.x.x
+- Ping gateway (2 packets)
+PING 192.168.x.x (192.168.x.x) 56(84) bytes of data.
+64 bytes from 192.168.x.x: icmp_seq=1 ttl=64 time=2.20 ms
+64 bytes from 192.168.x.x: icmp_seq=2 ttl=64 time=7.57 ms
+
+--- 192.168.x.x ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 2.202/4.886/7.571/2.684 ms
+
+[INTERNET]
+- HTTP/2 200 
+
+[LISTENING PORTS]
+- Listening TCP/UDP sockets + process info
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                           
+tcp   LISTEN 0      4096       127.0.0.1:45451      0.0.0.0:*           ino:17732 sk:1 cgroup:/system.slice/containerd.service <->
+tcp   LISTEN 0      4096       127.0.0.1:11434      0.0.0.0:*           uid:997 ino:891 sk:2 cgroup:/system.slice/ollama.service <->
+
+[AUTH - LAST 15 (journal)]
+Dec 17 18:21:19 HOST sudo[84311]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -u NetworkManager -n 50 --no-pager
+Dec 17 18:21:30 HOST sudo[84320]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -u NetworkManager -n 15 --no-pager
+Dec 17 18:22:51 HOST sudo[84376]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/du -xhd1 /
+Dec 17 18:22:55 HOST sudo[84398]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -n 200 --no-pager
+Dec 17 18:24:43 HOST sudo[84480]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/du -xhd1 /
+Dec 17 18:24:48 HOST sudo[84501]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -n 200 --no-pager
+Dec 17 18:24:48 HOST sudo[84507]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -u NetworkManager -n 50 --no-pager
+Dec 17 18:25:47 HOST sudo[84577]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/du -xhd1 /
+Dec 17 18:25:51 HOST sudo[84598]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -n 200 --no-pager
+Dec 17 18:25:51 HOST sudo[84604]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -u NetworkManager -n 50 --no-pager
+Dec 17 18:27:51 HOST sudo[84701]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/du -xhd1 /
+Dec 17 18:27:55 HOST sudo[84724]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -n 200 --no-pager
+Dec 17 18:27:55 HOST sudo[84730]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -u NetworkManager -n 15 --no-pager
+Dec 17 18:34:33 HOST sudo[84934]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/du -xhd1 /
+Dec 17 18:34:37 HOST sudo[84956]: HOST : TTY=pts/1 ; PWD=/home/HOST/arsenal ; USER=root ; COMMAND=/usr/bin/journalctl -n 200 --no-pager
+
+[NETWORKMANAGER - LAST 15 LOG LINES]
+- NetworkManager journal
+Dec 17 05:50:27 HOST NetworkManager[886]: <info>  [1765979427.4265] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 06:46:33 HOST NetworkManager[886]: <info>  [1765982793.4600] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 07:42:04 HOST NetworkManager[886]: <info>  [1765986124.4264] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 08:36:08 HOST NetworkManager[886]: <info>  [1765989368.4070] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 09:31:58 HOST NetworkManager[886]: <info>  [1765992718.4197] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 10:25:25 HOST NetworkManager[886]: <info>  [1765995925.4723] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 11:19:12 HOST NetworkManager[886]: <info>  [1765999152.4504] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 12:14:05 HOST NetworkManager[886]: <info>  [1766002445.4628] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 13:06:52 HOST NetworkManager[886]: <info>  [1766005612.4186] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 14:02:41 HOST NetworkManager[886]: <info>  [1766008961.4083] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 14:56:06 HOST NetworkManager[886]: <info>  [1766012166.4233] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 15:51:12 HOST NetworkManager[886]: <info>  [1766015472.4111] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 16:44:26 HOST NetworkManager[886]: <info>  [1766018666.4360] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 17:37:38 HOST NetworkManager[886]: <info>  [1766021858.4132] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+Dec 17 18:33:21 HOST NetworkManager[886]: <info>  [1766025201.4596] dhcp4 (wlan0): state changed new lease, address=192.168.x.x
+
+DONE. Report saved to: /home/HOST/arsenal/reports/triage_HOST_2025-12-17_183433.txt

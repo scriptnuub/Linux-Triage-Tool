@@ -1,0 +1,8 @@
+# Never upload real reports (they contain private info)
+reports/*
+!reports/.gitkeep
+
+# Editor junk
+*.swp
+*.swo
+*~
