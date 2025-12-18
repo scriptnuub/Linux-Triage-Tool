@@ -30,3 +30,10 @@ All output is saved to a **timestamped report** for later review.
 chmod +x triage.sh
 ./triage.sh
 
+
+## Reports
+
+Runtime reports are generated locally and **not committed to GitHub**.
+
+A sanitized example is provided in:  
+`sample_report.txt`
