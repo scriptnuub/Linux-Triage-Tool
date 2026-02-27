@@ -16,9 +16,9 @@ A Bash-based incident response tool designed for rapid evidence collection on li
    chmod +x triage.sh
 
 3. Execute: Run with root privileges to ensure access to protected system logs:
-    Bash
+Bash
 
-    sudo ./triage.sh
+sudo ./triage.sh
 
 📄 Reports
 
