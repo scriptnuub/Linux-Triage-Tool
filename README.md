@@ -10,7 +10,6 @@ A Bash-based incident response tool designed for rapid evidence collection on li
 * **User Activity:** Pulls login history (`last`, `lastb`) and sudoer configurations.
 
 ## ⚙️ How To Run
-
 1. **Prepare:** Transfer the script to a mounted USB drive to avoid tainting host evidence.
 2. **Permissions:** Grant execution permissions to the script:
    ```bash
@@ -32,3 +31,7 @@ Runtime reports are generated locally as a timestamped archive and not committed
     Order of Volatility: This tool is designed to collect memory-resident data first before interacting with the disk to preserve evidence integrity.
 
     Data Verification: The script automatically generates a SHA256 hash of the final report to ensure the evidence remains untampered throughout the chain of custody.
+
+🚀 Job Signals
+
+This project demonstrates the ability to automate critical SOC tasks under pressure. It proves technical proficiency in Linux administration, incident response methodology, and the forensic preservation of evidence.
