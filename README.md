@@ -1,35 +1,30 @@
-# Linux Triage Tool
+# Linux Live Triage & Evidence Collector
 
-A lightweight **Linux helpdesk triage script** that collects system, disk, network, and authentication data into a timestamped report.
+## 📌 Objective
+A Bash-based incident response tool designed for rapid evidence collection on live Linux systems. This script automates the gathering of volatile data and system logs to assist SOC analysts in identifying the root cause of an intrusion during the "Golden Hour" of an incident.
 
-This tool was built as a **learning project** while transitioning into IT / cybersecurity.  
-The script is intentionally readable so I can **learn from my own code** over time.
+## 🛠️ Data Collection Features
+* **Volatile Data:** Captures active network connections (`netstat`), running processes (`ps`), and open files (`lsof`).
+* **Persistence Checks:** Audits `cron` jobs, systemd services, and `~/.ssh/authorized_keys` for unauthorized entries.
+* **Log Aggregation:** Automatically archives `/var/log/auth.log`, `/var/log/syslog`, and web server logs.
+* **User Activity:** Pulls login history (`last`, `lastb`) and sudoer configurations.
 
----
+## ⚙️ Usage
+1. Transfer the script to a mounted USB drive to avoid tainting host evidence.
+2. Grant execution permissions: `chmod +x triage-tool.sh`
+3. Run with root privileges: `sudo ./triage-tool.sh`
 
-## What This Tool Does
-
-The script (`./triage.sh`) gathers:
-
-- System & kernel information  
-- Uptime, load, memory, and disk usage  
-- Network interfaces and routing table  
-- DNS and gateway connectivity tests  
-- Internet reachability check  
-- Listening ports and running services  
-- Recent authentication-related log entries  
-- Recent NetworkManager events  
-
-All output is saved to a **timestamped report** for later review.
-
----
+## ⚠️ Forensic Note
+This tool is designed to follow the **Order of Volatility**. It collects memory-resident data first before interacting with the disk to preserve the integrity of the investigation as much as possible.
 
 ## How To Run
 
 ```bash
+# Ensure the script is executable
 chmod +x triage.sh
-./triage.sh
 
+# Run with root privileges to access protected logs
+sudo ./triage.sh
 
 ## Reports
 
