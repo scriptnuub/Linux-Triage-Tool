@@ -13,12 +13,11 @@ A Bash-based incident response tool designed for rapid evidence collection on li
 1. **Prepare:** Transfer the script to a mounted USB drive to avoid tainting host evidence.
 2. **Permissions:** Grant execution permissions:
    ```bash
-   chmod +x triage.sh
+  # Ensure the script is executable
+chmod +x triage.sh
 
-    Execute: Run with root privileges to ensure access to all system logs:
-    Bash
-
-    sudo ./triage.sh
+# Run with root privileges to access protected logs
+sudo ./triage.sh
 
 📄 Reports
 
