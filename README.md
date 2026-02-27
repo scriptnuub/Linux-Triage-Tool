@@ -9,26 +9,25 @@ A Bash-based incident response tool designed for rapid evidence collection on li
 * **Log Aggregation:** Automatically archives `/var/log/auth.log`, `/var/log/syslog`, and web server logs.
 * **User Activity:** Pulls login history (`last`, `lastb`) and sudoer configurations.
 
-## ⚙️ Usage
-1. Transfer the script to a mounted USB drive to avoid tainting host evidence.
-2. Grant execution permissions: `chmod +x triage-tool.sh`
-3. Run with root privileges: `sudo ./triage-tool.sh`
+## ⚙️ How To Run
+1. **Prepare:** Transfer the script to a mounted USB drive to avoid tainting host evidence.
+2. **Permissions:** Grant execution permissions:
+   ```bash
+   chmod +x triage.sh
 
-## ⚠️ Forensic Note
-This tool is designed to follow the **Order of Volatility**. It collects memory-resident data first before interacting with the disk to preserve the integrity of the investigation as much as possible.
+    Execute: Run with root privileges to ensure access to all system logs:
+    Bash
 
-## How To Run
+    sudo ./triage.sh
 
-```bash
-# Ensure the script is executable
-chmod +x triage.sh
+📄 Reports
 
-# Run with root privileges to access protected logs
-sudo ./triage.sh
+Runtime reports are generated locally as a timestamped archive and not committed to GitHub.
 
-## Reports
+    A sanitized example is provided in: sample_report.txt
 
-Runtime reports are generated locally and **not committed to GitHub**.
+⚠️ Forensic & Legal Integrity
 
-A sanitized example is provided in:  
-`sample_report.txt`
+    Order of Volatility: This tool is designed to collect memory-resident data first before interacting with the disk to preserve evidence integrity.
+
+    Data Verification: The script automatically generates a SHA256 hash of the final report to ensure the evidence remains untampered throughout the chain of custody.
