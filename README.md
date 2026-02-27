@@ -38,6 +38,6 @@ Forensic & Legal Integrity
 
     Data Verification: The script automatically generates a SHA256 hash of the final report to ensure the evidence remains untampered throughout the chain of custody.
 
-Job Signals
+Impact
 
 This project demonstrates the ability to automate critical SOC tasks. It proves technical proficiency in Linux, incident response methodology, and the forensic preservation of evidence.
