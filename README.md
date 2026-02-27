@@ -40,4 +40,4 @@ Forensic & Legal Integrity
 
 Job Signals
 
-This project demonstrates the ability to automate critical SOC tasks under pressure. It proves technical proficiency in Linux administration, incident response methodology, and the forensic preservation of evidence.
+This project demonstrates the ability to automate critical SOC tasks. It proves technical proficiency in Linux, incident response methodology, and the forensic preservation of evidence.
