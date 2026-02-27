@@ -10,14 +10,16 @@ A Bash-based incident response tool designed for rapid evidence collection on li
 * **User Activity:** Pulls login history (`last`, `lastb`) and sudoer configurations.
 
 ## ⚙️ How To Run
-1. **Prepare:** Transfer the script to a mounted USB drive to avoid tainting host evidence.
-2. **Permissions:** Grant execution permissions:
-   ```bash
-  # Ensure the script is executable
-chmod +x triage.sh
 
-# Run with root privileges to access protected logs
-sudo ./triage.sh
+1. **Prepare:** Transfer the script to a mounted USB drive to avoid tainting host evidence.
+2. **Permissions:** Grant execution permissions to the script:
+   ```bash
+   chmod +x triage.sh
+
+    Execute: Run with root privileges to ensure access to protected system logs:
+    Bash
+
+    sudo ./triage.sh
 
 📄 Reports
 
